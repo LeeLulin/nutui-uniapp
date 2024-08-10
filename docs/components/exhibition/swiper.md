@@ -72,7 +72,7 @@
         setTimeout(() => {
           state.list = [
             'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-            'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg,
+            'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
             'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
             'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
           ];
@@ -113,7 +113,7 @@
         page: 2,
         list: [
           'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-          'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg,
+          'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
           'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
           'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
         ]
@@ -328,9 +328,9 @@
 <script lang="ts">
   import { reactive, toRefs, ref, Ref } from 'vue';
   export default {
-    components: { 
-      Left, 
-      Right 
+    components: {
+      Left,
+      Right
     },
     setup() {
       const swiper = ref(null) as Ref;
@@ -338,7 +338,7 @@
         page: 2,
         list: [
           'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-          'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg,
+          'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
           'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
           'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
         ],
@@ -349,7 +349,7 @@
       const handleNext = () => {
         swiper.value.next();
       };
-      
+
       return { ...toRefs(state), swiper, handlePrev, handleNext };
     }
   };

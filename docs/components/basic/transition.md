@@ -11,7 +11,7 @@
 ```html
 <template>
  <nut-transition
-      :show="showValue" name="fade" :duration="200" 
+      :show="showValue" name="fade" :duration="200"
     >
       <div>
         内容
@@ -34,7 +34,7 @@
 
 ### 内置动画
 
-通过 name 属性设置内置动画，目前支持 `fade` `fade-up` `fade-down` f`ade-left` `fade-right` `slide-up` `slide-down` `slide-left` `slide-right` `zoom`
+通过 name 属性设置内置动画，目前支持 `fade` `fade-up` `fade-down` `fade-left` `fade-right` `slide-up` `slide-down` `slide-left` `slide-right` `zoom`
 
 ```html
 <template>

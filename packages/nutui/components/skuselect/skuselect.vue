@@ -68,7 +68,9 @@ export default defineComponent({
       </view>
       <view class="nut-sku-select-item-skus">
         <view
-          v-for="(itemAttr, itemAttrIndex) in item.list" :key="itemAttr.name" class="nut-sku-select-item-skus-sku"
+          v-for="(itemAttr, itemAttrIndex) in item.list"
+          :key="itemAttr.name"
+          class="nut-sku-select-item-skus-sku"
           :class="[{ active: !itemAttr.disable && itemAttr.active }, { disable: itemAttr.disable }]"
           @click="changeSaleChild(itemAttr, itemAttrIndex, item, index)"
         >
@@ -138,10 +140,11 @@ export default defineComponent({
 
             &::after {
               position: absolute;
-              inset: 0;
+              top: 0;
+              left: 0;
               width: 100%;
               height: 100%;
-              content: '';
+              content: "";
               background-color: $sku-item-active-bg;
               border-radius: 15px;
               opacity: 0.15;

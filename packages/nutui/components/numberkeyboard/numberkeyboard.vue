@@ -113,6 +113,9 @@ function closeBoard() {
   emit(CLOSE_EVENT)
   emit(UPDATE_VISIBLE_EVENT, false)
 }
+function onConfirm() {
+  emit('confirm')
+}
 </script>
 
 <script lang="ts">
@@ -152,7 +155,8 @@ export default defineComponent({
       <div class="nut-number-keyboard__body">
         <div class="nut-number-keyboard__keys">
           <div
-            v-for="item of keysList" :key="`key${item.id}`"
+            v-for="item of keysList"
+            :key="`key${item.id}`"
             class="nut-key__wrapper"
             :class="[
               {
@@ -162,7 +166,8 @@ export default defineComponent({
             ]"
           >
             <div
-              class="nut-key" :class="[
+              class="nut-key"
+              :class="[
                 { 'nut-key--active': item.id === clickKeyIndex },
                 { 'nut-key--lock': item.type === 'lock' },
                 { 'nut-key--delete': item.type === 'delete' },
@@ -188,7 +193,8 @@ export default defineComponent({
         <div v-if="type === 'rightColumn'" class="nut-number-keyboard__sidebar">
           <div class="nut-key__wrapper">
             <div
-              class="nut-key" :class="[{ active: clickKeyIndex === 'delete' }]"
+              class="nut-key"
+              :class="[{ active: clickKeyIndex === 'delete' }]"
               @touchstart="(event: TouchEvent) => onTouchstart({ id: 'delete', type: 'delete' }, event)"
               @touchmove="(event: TouchEvent) => onTouchMove(event)"
               @touchend="onTouchEnd"
@@ -198,7 +204,7 @@ export default defineComponent({
               />
             </div>
           </div>
-          <div class="nut-key__wrapper nut-key__wrapper--finish" @click="closeBoard()">
+          <div class="nut-key__wrapper nut-key__wrapper--finish" @click="onConfirm">
             <div class="nut-key nut-key--finish " :class="[{ activefinsh: clickKeyIndex === 'finish' }]">
               {{ confirmText || translate('done') }}
             </div>

@@ -1,7 +1,7 @@
 {
   "name": "@nutui-uniapp/docs",
   "type": "module",
-  "version": "1.7.8",
+  "version": "1.7.14",
   "private": true,
   "description": "NutUI for uniapp docs",
   "keywords": [
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "nutui-uniapp": "workspace:^",
-    "vue": "3.3.9"
+    "vue": "^3.4.27"
   },
   "devDependencies": {
     "@vite-pwa/vitepress": "^0.3.1"

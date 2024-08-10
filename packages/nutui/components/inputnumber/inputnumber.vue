@@ -100,6 +100,7 @@ export default defineComponent({
     addGlobalClass: true,
     styleIsolation: 'shared',
   },
+  inheritAttrs: true,
 })
 </script>
 
@@ -117,20 +118,39 @@ export default defineComponent({
     <view v-if="props.readonly" class="nut-input-number__text--readonly">
       {{ modelValue }}
     </view>
-    <input
-      v-else
-      class="nut-input-number__text--input"
-      type="number"
-      :min="min"
-      :max="max"
-      :style="{ width: pxCheck(inputWidth), height: pxCheck(buttonSize) }"
-      :disabled="formDisabled"
-      :readonly="readonly"
-      :value="String(modelValue)"
-      @input="(change as any)"
-      @blur="(blur as any)"
-      @focus="(focus as any)"
-    >
+    <template v-else>
+      <!-- #ifdef MP -->
+      <input
+        class="nut-input-number__text--input"
+        type="number"
+        :min="min"
+        :max="max"
+        :style="{ width: pxCheck(inputWidth), height: pxCheck(buttonSize) }"
+        :disabled="formDisabled"
+        :readonly="readonly"
+        :value="String(modelValue)"
+        @input="(change as any)"
+        @blur="(blur as any)"
+        @focus="(focus as any)"
+      >
+      <!-- #endif -->
+      <!-- #ifndef MP -->
+      <input
+        class="nut-input-number__text--input"
+        type="number"
+        :min="min"
+        :max="max"
+        :style="{ width: pxCheck(inputWidth), height: pxCheck(buttonSize) }"
+        :disabled="formDisabled"
+        :readonly="readonly"
+        :value="String(modelValue)"
+        v-bind="$attrs"
+        @input="(change as any)"
+        @blur="(blur as any)"
+        @focus="(focus as any)"
+      >
+      <!-- #endif -->
+    </template>
     <view
       class="nut-input-number__icon nut-input-number__right"
       :class="{ 'nut-input-number__icon--disabled': !addAllow() }"

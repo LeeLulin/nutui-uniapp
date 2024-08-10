@@ -40,6 +40,7 @@
     display: inline-flex;
     align-items: center;
     padding: $checkbox-button-padding;
+    overflow: hidden;
     font-size: $checkbox-button-font-size;
     color: $checkbox-label-color;
     background: $checkbox-button-background;
@@ -54,10 +55,11 @@
 
       &::after {
         position: absolute;
-        inset: 0;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        content: '';
+        content: "";
         background-color: $checkbox-button-background-active;
         opacity: 0.05;
       }
@@ -97,6 +99,8 @@
     color: $primary-color;
   }
 
+  &__icon--disabled,
+  // TODO 2.x移除
   &__icon--disable {
     font-size: $checkbox-icon-font-size;
     color: $checkbox-icon-disable-color2;

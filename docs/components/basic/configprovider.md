@@ -115,7 +115,7 @@
 ```scss
 // 如果您仍旧选择使用:root 选择器来进行修改主色调，您还需要修改以下3个组件变量色  primaryColor为设置的主色调
 
---nut-address-region-tab-line: linear-gradient(90deg, primaryColor 0%, rgba(primaryColor,0.15) 100%)  ; 
+--nut-address-region-tab-line: linear-gradient(90deg, primaryColor 0%, rgba(primaryColor,0.15) 100%)  ;
 --nut-tabs-horizontal-tab-line-color: linear-gradient(180deg, primaryColor 0%, rgba(primaryColor,0.15) 100%);
 --nut-tabs-vertical-tab-line-color: linear-gradient(180deg, primaryColor 0%, rgba(primaryColor,0.15) 100%);
 ```
@@ -176,7 +176,8 @@
 
 ### Props
 
-| 参数       | 说明                                             | 类型   | 默认值 |
-| ---------- | ------------------------------------------------ | ------ | ------ |
-| theme      | 主题风格，设置为 `dark` 来开启深色模式，全局生效 | string | -      |
-| theme-vars | 自定义主题变量                                   | object | -      |
+| 参数               | 说明                           | 类型     | 默认值  |
+|------------------|------------------------------|--------|------|
+| theme            | 主题风格，设置为 `dark` 来开启深色模式，全局生效 | string | -    |
+| theme-vars       | 自定义主题变量                      | object | -    |
+| z-index `1.7.11` | 设置所有弹窗类组件的 z-index，该属性对全局生效  | number | 2000 |

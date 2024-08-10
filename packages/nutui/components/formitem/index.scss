@@ -1,10 +1,10 @@
-@import '../cell/index';
+@import "../cell/index";
 
 .nut-theme-dark {
   .nut-form-item {
     &__body {
       &__slots {
-        :deep(.nut-input-text) {
+        :deep(.nut-input) {
           color: $dark-color;
           background: transparent;
         }
@@ -23,7 +23,7 @@
     left: 16px;
     box-sizing: border-box;
     pointer-events: none;
-    content: ' ';
+    content: "";
     transform: scaleX(0);
   }
 
@@ -50,7 +50,7 @@
     &:deep(.nut-cell__title) {
       min-width: auto;
     }
-    
+
     &.required {
       &::before {
         margin-right: $form-item-required-margin-right;

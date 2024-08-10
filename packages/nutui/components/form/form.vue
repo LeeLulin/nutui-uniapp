@@ -144,7 +144,7 @@ async function checkRule(item: FormRule): Promise<ErrorMessage | boolean> {
  * @param customProp 指定校验，用于用户自定义场景时触发，例如 blur、change 事件
  * @returns
  */
-function validate(customProp = '') {
+function validate(customProp = ''): Promise<{ valid: boolean, errors: ErrorMessage[] }> {
   return new Promise((resolve, reject) => {
     try {
       const task = findFormItem(internalChildren?.map(child => child.vnode))
@@ -191,7 +191,12 @@ export default defineComponent({
 </script>
 
 <template>
-  <form :class="classes" :style="customStyle" action="#" @submit.prevent="() => false">
+  <form
+    :class="classes"
+    :style="customStyle"
+    action="#"
+    @submit.prevent="() => false"
+  >
     <NutCellGroup>
       <slot />
     </NutCellGroup>
