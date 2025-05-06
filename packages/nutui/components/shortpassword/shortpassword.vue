@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import type { CSSProperties } from 'vue'
 import { computed, defineComponent, ref, watch } from 'vue'
+import { CLOSE_EVENT, FOCUS_EVENT, PREFIX, UPDATE_VISIBLE_EVENT } from '../_constants'
+import { getMainClass } from '../_utils'
+import { useTranslate } from '../../locale'
 import NutIcon from '../icon/icon.vue'
 import NutPopup from '../popup/popup.vue'
-import { CLOSE_EVENT, FOCUS_EVENT, PREFIX, UPDATE_VISIBLE_EVENT } from '../_constants'
-import { useTranslate } from '../../locale'
-import { getMainClass } from '../_utils'
 import { shortpasswordEmits, shortpasswordProps } from './shortpassword'
 
 const props = defineProps(shortpasswordProps)
@@ -81,8 +81,7 @@ export default defineComponent({
       :custom-style="popupStyles"
       :closeable="true"
       :close-on-click-overlay="props.closeOnClickOverlay"
-      @click-close-icon="close"
-      @click-overlay="close"
+      @close="close"
     >
       <view class="nut-short-password-title">
         {{ props.title || translate('title') }}

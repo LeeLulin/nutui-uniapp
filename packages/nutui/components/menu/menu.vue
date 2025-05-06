@@ -1,9 +1,10 @@
 <script lang="ts">
-import { type ComponentInternalInstance, computed, defineComponent, getCurrentInstance, ref } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
+import { computed, defineComponent, getCurrentInstance, ref } from 'vue'
 import { PREFIX } from '../_constants'
 import { useProvide, useRect } from '../_hooks'
-import Icon from '../icon/icon.vue'
 import { getMainClass, getRandomId } from '../_utils'
+import Icon from '../icon/icon.vue'
 import { MENU_KEY, menuProps } from './menu'
 
 const componentName = `${PREFIX}-menu`
@@ -100,7 +101,7 @@ export default defineComponent({
         >
           <view class="nut-menu__title" :class="getClasses(item.state.showPopup)">
             <view class="nut-menu__title-text">
-              {{ item.renderTitle() }}
+              {{ item.title }}
             </view>
             <view class="nut-menu__title-icon">
               <!-- #ifdef MP-WEIXIN -->

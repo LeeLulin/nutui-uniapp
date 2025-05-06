@@ -2,13 +2,14 @@
 import type { Ref } from 'vue'
 import { computed, defineComponent, reactive } from 'vue'
 import { CLOSE_EVENT, OPEN_EVENT, PREFIX } from '../_constants'
-import PopUp from '../popup/popup.vue'
-import Icon from '../icon/icon.vue'
-import { getMainClass, getMainStyle } from '../_utils'
 import { useInject } from '../_hooks'
-import { MENU_KEY } from '../menu/menu'
+import { getMainClass, getMainStyle } from '../_utils'
+import Icon from '../icon/icon.vue'
 import type { MenuProps } from '../menu'
-import { type MenuItemOption, menuitemEmits, menuitemProps } from './menuitem'
+import { MENU_KEY } from '../menu/menu'
+import PopUp from '../popup/popup.vue'
+import type { MenuItemOption } from './menuitem'
+import { menuitemEmits, menuitemProps } from './menuitem'
 
 const componentName = `${PREFIX}-menu-item`
 
@@ -55,7 +56,7 @@ export default defineComponent({
       if (parent?.props.direction === 'down')
         return { ...heightStyle, top: 0 }
 
-      return { ...heightStyle, top: 'auto' }
+      return { ...heightStyle, bottom: 0 }
     })
 
     const open = () => {
@@ -86,14 +87,14 @@ export default defineComponent({
       emit('change', value)
     }
 
-    const renderTitle = () => {
+    const title = computed(() => {
       if (props.title)
         return props.title
 
       const match: any = props.options?.find((option: any) => option.value === props.modelValue)
 
       return match ? match.text : ''
-    }
+    })
 
     const onClick = (option: MenuItemOption) => {
       state.showPopup = false
@@ -130,7 +131,7 @@ export default defineComponent({
       classes,
       styles,
       placeholderElementStyle,
-      renderTitle,
+      title,
       state,
       parent,
       toggle,

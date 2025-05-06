@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { defineComponent, ref } from 'vue'
+import { PREFIX } from '../../_constants'
 import NutButton from '../../button/button.vue'
 import NutSwipe from '../../swipe/swipe.vue'
-import { PREFIX } from '../../_constants'
 import ItemContents from './Itemcontents.vue'
 
 const props = defineProps({
@@ -56,22 +56,24 @@ function handleLongDelClick(event: any) {
   emit('longDel', event, props.address)
 }
 
-let timer: NodeJS.Timeout | null = null
+let timer = 0
 
-function destroyTimer() {
-  if (timer == null)
-    return
-
-  clearTimeout(timer)
-  timer = null
-}
-
+// fxk eslint
 function startTimer(event: any) {
+  // @ts-expect-error whatever
   timer = setTimeout(() => {
     showMaskRef.value = true
 
     emit('longDown', event, props.address)
   }, 300)
+}
+
+function destroyTimer() {
+  if (timer === 0)
+    return
+
+  clearTimeout(timer)
+  timer = 0
 }
 
 // 长按功能实现

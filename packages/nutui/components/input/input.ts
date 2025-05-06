@@ -1,4 +1,3 @@
-import type { ExtractPropTypes, PropType, StyleValue } from 'vue'
 import type {
   BaseEvent,
   InputOnBlurEvent,
@@ -6,6 +5,8 @@ import type {
   InputOnFocusEvent,
   InputOnInputEvent,
 } from '@uni-helper/uni-app-types'
+import type { ExtractPropTypes, PropType, StyleValue } from 'vue'
+import { BLUR_EVENT, CLEAR_EVENT, CLICK_EVENT, CONFIRM_EVENT, FOCUS_EVENT, INPUT_EVENT, UPDATE_MODEL_EVENT } from '../_constants'
 import type { ClassType } from '../_utils'
 import {
   commonProps,
@@ -17,7 +18,6 @@ import {
   nullableBooleanProp,
   truthProp,
 } from '../_utils'
-import { BLUR_EVENT, CLEAR_EVENT, CLICK_EVENT, CONFIRM_EVENT, FOCUS_EVENT, INPUT_EVENT, UPDATE_MODEL_EVENT } from '../_constants'
 import type { InputAlignType, InputConfirmType, InputFormatTrigger, InputMode, InputType } from './type'
 
 export const inputProps = {
@@ -146,7 +146,7 @@ export const inputProps = {
   /**
    * @description 指定focus时的光标位置
    */
-  cursor: Number,
+  cursor: makeNumberProp(-1),
   /**
    * @description 光标起始位置，自动聚集时有效，需与selection-end搭配使用
    */
@@ -159,6 +159,10 @@ export const inputProps = {
    * @description focus时，点击页面的时候不收起键盘
    */
   holdKeyboard: Boolean,
+  /**
+   * @description 是否是密码类型
+   */
+  password: Boolean,
 }
 
 export type InputProps = ExtractPropTypes<typeof inputProps>

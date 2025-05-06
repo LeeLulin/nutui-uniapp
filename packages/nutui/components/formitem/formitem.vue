@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 import { computed, defineComponent, useSlots } from 'vue'
-import { getMainClass, pxCheck } from '../_utils'
 import { PREFIX } from '../_constants'
+import { useInject } from '../_hooks'
+import { getMainClass, pxCheck } from '../_utils'
 import NutCell from '../cell/cell.vue'
 import { FORM_KEY } from '../form/form'
-import { useInject } from '../_hooks'
-import type { FormItemRule } from './types'
+import NutIcon from '../icon/icon.vue'
 import type { FormItemProps } from './formitem'
 import { formitemProps } from './formitem'
+import type { FormItemRule } from './types'
 
 const props = defineProps(formitemProps)
 const slots = useSlots()
@@ -95,6 +96,7 @@ export default defineComponent({
     <view class="nut-cell__value nut-form-item__body">
       <view class="nut-form-item__body__slots" :style="bodyStyle">
         <slot />
+        <NutIcon v-if="props.isLink" custom-class="nut-cell__link" name="right" />
       </view>
       <view v-if="formErrorTip[prop] && showErrorMessage" class="nut-form-item__body__tips" :style="errorMessageStyle">
         {{ formErrorTip[prop] }}

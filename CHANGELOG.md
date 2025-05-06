@@ -1,3 +1,65 @@
+## [1.8.3](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.8.2...v1.8.3) (2025-03-07)
+
+### Bug Fixes
+
+* **toast,notify,guessgift,addresslist:** 修复setTimeout类型错误 ([c2f86f5](https://github.com/nutui-uniapp/nutui-uniapp/commit/c2f86f53607ec1f3cab3fa8dd18e7fabfb6aba20))
+
+### Features
+
+* **input:** 新增 password 属性 ([#456](https://github.com/nutui-uniapp/nutui-uniapp/issues/456)) ([98d40ce](https://github.com/nutui-uniapp/nutui-uniapp/commit/98d40cee93dc6f17e706746f7af88719e7154da1))
+
+## [1.8.2](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.8.1...v1.8.2) (2025-01-15)
+
+### Bug Fixes
+
+* **hooks:** 修复useSelectorQuery在app平台查询节点数据为空的问题 ([#446](https://github.com/nutui-uniapp/nutui-uniapp/issues/446)) ([4e7ceb6](https://github.com/nutui-uniapp/nutui-uniapp/commit/4e7ceb6a62bd541a574957c288491eefffc74edf))
+* **input :** 修复自动聚焦时默认光标位置在最左侧 ([#451](https://github.com/nutui-uniapp/nutui-uniapp/issues/451)) ([255c067](https://github.com/nutui-uniapp/nutui-uniapp/commit/255c06791e8beeab7276a9434892e93054ef9ade))
+* **menu:** 修复点击菜单无法正常切换的问题 ([#449](https://github.com/nutui-uniapp/nutui-uniapp/issues/449)) ([fa60cbb](https://github.com/nutui-uniapp/nutui-uniapp/commit/fa60cbb8c10d1ff0f8978e268392d22219d54d94))
+* **table:** 修复column的align、sorter类型声明错误 ([d936d5f](https://github.com/nutui-uniapp/nutui-uniapp/commit/d936d5ffde9e7275b46d67f5a661f96dbd127414))
+* **uploader:** 修复data外部修改后提交时依然是旧值问题 ([#445](https://github.com/nutui-uniapp/nutui-uniapp/issues/445)) ([c1e7a58](https://github.com/nutui-uniapp/nutui-uniapp/commit/c1e7a58373b894fdaca5576bd22eb508afed387b))
+
+### Features
+
+* **progress:** 新增ProgressStatus类型导出 ([ea5fb65](https://github.com/nutui-uniapp/nutui-uniapp/commit/ea5fb652fddc03c9660690e6caee2a7c3c2c7c6f))
+
+## [1.8.1](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.8.0...v1.8.1) (2024-10-30)
+
+### Bug Fixes
+
+* **menu:** 修复menu组件在app平台报错的问题 ([#443](https://github.com/nutui-uniapp/nutui-uniapp/issues/443)) ([9501324](https://github.com/nutui-uniapp/nutui-uniapp/commit/9501324f5dc9402bf794e5d1ca554bd308a1faf0))
+* **picker:** 修复深色模式下选中项边框颜色突兀 ([7b3bc4b](https://github.com/nutui-uniapp/nutui-uniapp/commit/7b3bc4b637b89ebe3686a107c723df20b1aeee64))
+* **picker:** 修复showToolbar为false时,picker组件宽度为0不显示的问题 ([#442](https://github.com/nutui-uniapp/nutui-uniapp/issues/442)) ([76bd48d](https://github.com/nutui-uniapp/nutui-uniapp/commit/76bd48d6bc8c121084346f3cf80082214468626a))
+* **uploader:** 修复uploader组件在app端，succes事件之后还执行progress事件的问题 ([#441](https://github.com/nutui-uniapp/nutui-uniapp/issues/441)) ([d750496](https://github.com/nutui-uniapp/nutui-uniapp/commit/d7504969eee73b9b0fee6220872fa558c03d4cf6))
+
+# [1.8.0](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.7.17...v1.8.0) (2024-10-14)
+
+### Bug Fixes
+
+* **dialog:** 修复小程序平台启用 `close-on-popstate` 时 `onMounted` 报错 ([#435](https://github.com/nutui-uniapp/nutui-uniapp/issues/435)) ([93127f5](https://github.com/nutui-uniapp/nutui-uniapp/commit/93127f557ad6cbbf04b88611868f9fb59a786875))
+* **popup:** 修复 `visible` 初始值为 `true` 时丢失 `z-index` 问题 ([#437](https://github.com/nutui-uniapp/nutui-uniapp/issues/437)) ([47adc2a](https://github.com/nutui-uniapp/nutui-uniapp/commit/47adc2a17ac85413d310d7849186782b1414e809))
+* **short-password:** 修复 `close-on-click-overlay` 属性无效 ([#436](https://github.com/nutui-uniapp/nutui-uniapp/issues/436)) ([e62dfb0](https://github.com/nutui-uniapp/nutui-uniapp/commit/e62dfb0ac69fa2b7c4834d640dee0426d43cb5b8))
+
+## [1.7.17](https://github.com/xiaohe0601/nutui-uniapp/compare/v1.7.16...v1.7.17) (2024-09-18)
+
+### Bug Fixes
+
+* **inputnumber:** 新增step-strictly属性 ([#421](https://github.com/xiaohe0601/nutui-uniapp/issues/421)) ([c0a3c47](https://github.com/xiaohe0601/nutui-uniapp/commit/c0a3c47099f19db14716704d5ba2b52dc31541ec))
+* **inputnumber:** 修复失焦后未正确按照最大/最小值修改输入值 ([#420](https://github.com/xiaohe0601/nutui-uniapp/issues/420)) ([be3059f](https://github.com/xiaohe0601/nutui-uniapp/commit/be3059f5e82e713a7df5f33eb31cc8fc89b7766a))
+
+### Features
+
+* **cell:** 新增title-width属性 ([#418](https://github.com/xiaohe0601/nutui-uniapp/issues/418)) ([3079495](https://github.com/xiaohe0601/nutui-uniapp/commit/3079495a522af1ae75073efa0830dde43835bd00))
+
+## [1.7.16](https://github.com/xiaohe0601/nutui-uniapp/compare/v1.7.15...v1.7.16) (2024-09-04)
+
+### Bug Fixes
+
+* **popover,shakedice,tour:** fix scss warning ([#413](https://github.com/xiaohe0601/nutui-uniapp/issues/413)) ([28df492](https://github.com/xiaohe0601/nutui-uniapp/commit/28df492f6daa00da26e72f619e8f2d5073489785))
+
+### Features
+
+* **notify:** 新增useNotify ([873b454](https://github.com/xiaohe0601/nutui-uniapp/commit/873b4545ec277b6227ea90d23d8880d0d531edb8))
+
 ## [1.7.15](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.7.14...v1.7.15) (2024-08-17)
 
 ### Bug Fixes

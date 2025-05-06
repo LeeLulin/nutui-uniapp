@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
 import type { FormInst, FormItemRule, FormItemRuleWithoutValidator } from 'nutui-uniapp'
+import { reactive, ref } from 'vue'
 
 /* eslint-disable no-console */
 const formData = reactive({
@@ -387,7 +387,7 @@ async function asyncValidator(val: string): Promise<string> {
           multiple
         />
       </nut-form-item>
-      <nut-form-item label="地址">
+      <nut-form-item label="地址" is-link>
         <nut-input
           v-model="formData2.address"
           class="nut-input-text"

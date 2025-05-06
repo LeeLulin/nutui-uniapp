@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type ComponentInternalInstance, computed, defineComponent, getCurrentInstance, onMounted, reactive, ref, watch } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
+import { computed, defineComponent, getCurrentInstance, onMounted, reactive, ref, watch } from 'vue'
 import { PREFIX } from '../_constants'
 import { useRect, useSelectorQuery } from '../_hooks'
 import { cloneDeep, getMainClass, getRandomId } from '../_utils'
@@ -87,18 +88,29 @@ function changePosition() {
   })
 }
 
-const timer = ref<any>(null)
+let timer = 0
+
 function init() {
   showBean.value = false
-  clearTimeout(timer) // 初始化timeout定时器，防止定时器重叠
-  timer.value = setTimeout(() => {
-    changePosition() // 循环调用函数自身，以达到循环的效果
+
+  if (timer !== 0) {
+    destroyTimer()
+  }
+
+  // @ts-expect-error whatever
+  timer = setTimeout(() => {
+    // 循环调用函数自身，以达到循环的效果
+    changePosition()
+
     if (num.value < props.turnNumber) {
       init()
       num.value++
     }
     else {
-      clearTimeout(timer)
+      if (timer !== 0) {
+        destroyTimer()
+      }
+
       num.value = 0
       setTimeout(() => {
         lock.value = false
@@ -106,6 +118,14 @@ function init() {
       }, 500)
     }
   }, props.turnsFrequency)
+}
+
+function destroyTimer() {
+  if (timer === 0)
+    return
+
+  clearTimeout(timer)
+  timer = 0
 }
 
 function start() {
