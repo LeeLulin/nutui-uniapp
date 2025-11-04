@@ -32,6 +32,17 @@ watch(() => props.fileList, () => {
   fileList.value = props.fileList
 })
 
+const videoObjectFit = computed(() => {
+  if (props.mode === 'scaleToFill') {
+    return 'fill'
+  }
+  if (props.mode === 'aspectFill') {
+    return 'cover'
+  }
+
+  return 'contain'
+})
+
 function handleFileItemClick(fileItem: FileItem) {
   emit('fileItemClick', { fileItem })
 }
@@ -147,6 +158,7 @@ function readFile(files: ChooseFile[]) {
 
     fileItem.uid = new Date().getTime().toString() + Math.random().toString(36).substring(2, 9)
     fileItem.path = filepath
+    fileItem.size = file.size
     fileItem.name = file.name || filepath
     fileItem.status = 'ready'
     fileItem.message = translate('waitingUpload')
@@ -280,10 +292,21 @@ export default defineComponent({
         </view>
 
         <image
-          v-if="(item.type === 'image' || item.type === 'video') && item.url"
+          v-if="item.type === 'image' && item.url"
           class="nut-uploader__preview-img__c"
-          :mode="props.mode"
           :src="item.url"
+          :mode="props.mode"
+          @click="handleFileItemClick(item)"
+        />
+
+        <video
+          v-else-if="item.type === 'video' && item.url"
+          class="nut-uploader__preview-img__c"
+          :src="item.url"
+          :object-fit="videoObjectFit"
+          :controls="false"
+          :show-center-play-btn="false"
+          referrer-policy="origin"
           @click="handleFileItemClick(item)"
         />
 
@@ -313,7 +336,7 @@ export default defineComponent({
             custom-class="nut-uploader__preview-img__file__del"
             name="del"
             custom-color="#808080"
-            @click="onDelete(item, index)"
+            @click.stop="onDelete(item, index)"
           />
         </view>
 

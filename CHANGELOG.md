@@ -1,3 +1,57 @@
+## [1.9.3](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.9.2...v1.9.3) (2025-10-16)
+
+### Bug Fixes
+
+* **address:** 修复 safe-area-inset-bottom 无效 ([#494](https://github.com/nutui-uniapp/nutui-uniapp/issues/494)) ([a496ab1](https://github.com/nutui-uniapp/nutui-uniapp/commit/a496ab12d9cb3952c0f9bd9948e8d5bc0d246ece))
+* **uploader:** 修复 video 类型文件未使用 video 标签 ([#498](https://github.com/nutui-uniapp/nutui-uniapp/issues/498)) ([8c862ac](https://github.com/nutui-uniapp/nutui-uniapp/commit/8c862ac28ca705aa6b9c79fe3cfa8e62e959a10a))
+
+## [1.9.2](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.9.1...v1.9.2) (2025-10-13)
+
+### Bug Fixes
+
+* **uploader:** 修复 list 样式点击删除时触发 item 点击事件 ([b7f23c8](https://github.com/nutui-uniapp/nutui-uniapp/commit/b7f23c885ef511308efda9f722412c312713be47))
+
+### Features
+
+* **uploader:** 自定义上传回调新增文件大小 ([#492](https://github.com/nutui-uniapp/nutui-uniapp/issues/492)) ([cae0d50](https://github.com/nutui-uniapp/nutui-uniapp/commit/cae0d50222c65b308aad967cb6db97003ecd0fd8))
+
+## [1.9.1](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.9.0...v1.9.1) (2025-09-18)
+
+### Bug Fixes
+
+* **uploader:** 调整删除按钮 z-index 以避免被覆盖 ([#490](https://github.com/nutui-uniapp/nutui-uniapp/issues/490)) ([4a06ff7](https://github.com/nutui-uniapp/nutui-uniapp/commit/4a06ff78b2e5e70d6faeeffc29753b5fa37d3b2b))
+
+### Features
+
+* **tabbar:** 新增 `controlled` 参数可启用受控模式 ([#486](https://github.com/nutui-uniapp/nutui-uniapp/issues/486)) ([ea7c61a](https://github.com/nutui-uniapp/nutui-uniapp/commit/ea7c61a4ec6b9401d312643fb0f8e6ddb63dc13f))
+
+### Performance Improvements
+
+* **sku-header:** 移除无效的 isH5 判断 ([#491](https://github.com/nutui-uniapp/nutui-uniapp/issues/491)) ([c5a6ec1](https://github.com/nutui-uniapp/nutui-uniapp/commit/c5a6ec1a08d788cfda184710f8e960e4de0a153e))
+
+# [1.9.0](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.8.4...v1.9.0) (2025-07-16)
+
+### Bug Fixes
+
+* **cascader:** 修复级联选择器选中和不可选的样式层级错误 ([#473](https://github.com/nutui-uniapp/nutui-uniapp/issues/473)) ([d3c5dfc](https://github.com/nutui-uniapp/nutui-uniapp/commit/d3c5dfc9d44ba1cf3d9ddf8ce2da2fa3f04877d1))
+* **sku:** 修复header内插槽的显示判断 ([#469](https://github.com/nutui-uniapp/nutui-uniapp/issues/469)) ([f614273](https://github.com/nutui-uniapp/nutui-uniapp/commit/f614273d3f53c4c295885ad21e508582d087b7bb))
+* **tabs:** 修复自定义标签栏找不到元素的报错 ([#472](https://github.com/nutui-uniapp/nutui-uniapp/issues/472)) ([f5570f9](https://github.com/nutui-uniapp/nutui-uniapp/commit/f5570f918e6c78520c29c759bfcb50ef7f82fd6e))
+* **textarea:** 修复初始值超过长度限制时内容溢出 ([6f9af65](https://github.com/nutui-uniapp/nutui-uniapp/commit/6f9af651b8819bdb5b7617b407383b7970dcb23e))
+
+### Features
+
+* **input-number:** 支持输入框类型参数 ([#477](https://github.com/nutui-uniapp/nutui-uniapp/issues/477)) ([a48fc7f](https://github.com/nutui-uniapp/nutui-uniapp/commit/a48fc7f78a60bed28a0a17597714621294c76152))
+
+## [1.8.4](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.8.3...v1.8.4) (2025-05-16)
+
+### Bug Fixes
+
+* **transition:** 修复部分环境编译报错 ([#462](https://github.com/nutui-uniapp/nutui-uniapp/issues/462)) ([683ad81](https://github.com/nutui-uniapp/nutui-uniapp/commit/683ad81d1d9fc57690b198e6d47eb739d9c15ef9))
+
+### Features
+
+* **form-item:** 新增 `is-link` 属性 ([#458](https://github.com/nutui-uniapp/nutui-uniapp/issues/458)) ([e701697](https://github.com/nutui-uniapp/nutui-uniapp/commit/e70169776b91725a0a7bd0ba7d1f3be91067beb5))
+
 ## [1.8.3](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.8.2...v1.8.3) (2025-03-07)
 
 ### Bug Fixes
