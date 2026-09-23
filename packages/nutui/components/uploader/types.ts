@@ -31,5 +31,22 @@ export interface UploaderInst {
    * @param index
    * @returns
    */
-  clearUploadQueue: (index: number) => void
+  clearUploadQueue: (index?: number) => void
+}
+
+export interface FileItemRect {
+  top: number
+  left: number
+  width: number
+  height: number
+}
+
+export interface DragState {
+  dragging: boolean
+  dragIndex: number
+  startX: number
+  startY: number
+  offsetX: number
+  offsetY: number
+  rects: FileItemRect[]
 }

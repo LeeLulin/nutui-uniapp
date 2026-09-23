@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { PickerViewOnChangeEvent } from '@uni-helper/uni-app-types'
 import type { CSSProperties } from 'vue'
 import { computed, defineComponent, reactive, ref, toRefs } from 'vue'
@@ -212,6 +212,7 @@ export default defineComponent({
         <NutPickerColumn
           :ref="columnRef"
           :column="column"
+          :index="defaultIndexes[columnIndex]"
           :value="defaultValues[columnIndex]"
           :field-names="columnFieldNames"
           :three-dimensional="props.threeDimensional"

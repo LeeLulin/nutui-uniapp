@@ -1,3 +1,33 @@
+## [1.11.2](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.11.1...v1.11.2) (2026-03-11)
+
+### Bug Fixes
+
+* **uploader:** 修复小程序端拖拽样式异常 ([3ec4679](https://github.com/nutui-uniapp/nutui-uniapp/commit/3ec467940b35545458b32935e225912255ce18a4))
+
+## [1.11.1](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.11.0...v1.11.1) (2026-02-26)
+
+# [1.11.0](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.10.0...v1.11.0) (2026-02-26)
+
+### Bug Fixes
+
+* **barrage:** 修复类型错误 ([#510](https://github.com/nutui-uniapp/nutui-uniapp/issues/510)) ([2064ad6](https://github.com/nutui-uniapp/nutui-uniapp/commit/2064ad6eb05fe4240dba25532f397e6022bb4b77))
+
+### Features
+
+* **uploader:** 新增拖拽排序功能 ([#512](https://github.com/nutui-uniapp/nutui-uniapp/issues/512)) ([342bfd9](https://github.com/nutui-uniapp/nutui-uniapp/commit/342bfd97940ff9645200e6096e530028d6e2d11c))
+
+# [1.10.0](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.9.4...v1.10.0) (2025-12-05)
+
+### Bug Fixes
+
+* **picker:** 修复 H5 端动画未结束时点击确认无法正确选中 ([#506](https://github.com/nutui-uniapp/nutui-uniapp/issues/506)) ([d61f5bf](https://github.com/nutui-uniapp/nutui-uniapp/commit/d61f5bf31acd22a1bb8a7eec9c9fe3dd17e8c0ae))
+
+## [1.9.4](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.9.3...v1.9.4) (2025-11-12)
+
+### Features
+
+* **imagepreview:** 新增 show-menu-by-longpress 属性 ([#502](https://github.com/nutui-uniapp/nutui-uniapp/issues/502)) ([6817ec6](https://github.com/nutui-uniapp/nutui-uniapp/commit/6817ec6ed5b0f47881415afac9f0d6d20b5df664))
+
 ## [1.9.3](https://github.com/nutui-uniapp/nutui-uniapp/compare/v1.9.2...v1.9.3) (2025-10-16)
 
 ### Bug Fixes

@@ -77,17 +77,16 @@ async function init() {
 }
 
 const methods = {
-  // 选中一个节点，静默模式不触发事件
   async handleNode(node: CascaderOption, silent?: boolean) {
     const { disabled, loading } = node
 
-    if ((!silent && disabled) || !panes.value[tabsCursor.value])
+    if ((!silent && disabled) || !panes.value[node.level!])
       return
 
     if (tree.value.isLeaf(node, isLazy.value)) {
       node.leaf = true
-      panes.value[tabsCursor.value].selectedNode = node
-      panes.value = panes.value.slice(0, (node.level as number) + 1)
+      panes.value[node.level!].selectedNode = node
+      panes.value = panes.value.slice(0, node.level! + 1)
 
       if (!silent) {
         const pathNodes = panes.value.map(pane => pane.selectedNode)
@@ -99,9 +98,9 @@ const methods = {
     }
 
     if (tree.value.hasChildren(node, isLazy.value)) {
-      const level = (node.level as number) + 1
+      const level = node.level! + 1
 
-      panes.value[tabsCursor.value].selectedNode = node
+      panes.value[node.level!].selectedNode = node
       panes.value = panes.value.slice(0, level)
       panes.value.push({
         nodes: node.children || [],
@@ -125,7 +124,7 @@ const methods = {
     await invokeLazyLoad(node)
 
     if (currentProcessNode === node) {
-      panes.value[tabsCursor.value].selectedNode = node
+      panes.value[node.level!].selectedNode = node
       methods.handleNode(node, silent)
     }
   },
